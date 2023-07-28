@@ -1,2 +1,1 @@
-# animations
-This repository has the initial ideia to store some animations' projects made with CSS and JS.
+By free to see the ideas and help out.
