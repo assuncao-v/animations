@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(10, 10, 10);
+}
+
+#container{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container .ring{
+    position: relative;
+    height: 150px;
+    width: 150px;
+    margin: -30px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top: 4px solid rgb(81, 81, 221);
+    animation: allRingsRotating 4s linear infinite;
+}
+
+@keyframes allRingsRotating {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+#container .ring::before{
+    content: '';
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: rgb(81, 81, 221);
+    box-shadow: 0 0 0 5px  rgb(40, 40, 117),
+    0 0 0 10px  rgb(29, 29, 68),
+    0 0 0 20px  rgb(19, 19, 46);
+}
+
+
+#container .ring::nth-child(2)::before{
+    content: '';
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: rgb(221, 81, 202);
+    box-shadow: 0 0 0 5px  rgb(40, 40, 117),
+    0 0 0 10px  rgb(29, 29, 68),
+    0 0 0 20px  rgb(19, 19, 46);
+}
+
+#container .ring:nth-child(2){
+    animation: secoundRingAnimating 4s linear infinite;
+}
+
+@keyframes secoundRingAnimating{
+    0%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+} 
+
+#container .ring:nth-child(3){
+    position: absolute;
+    top: -66.66px;
+}
+
+#container p{
+    position: absolute;
+    color: #fff;
+    font-size: 1.5em;
+    font-family: sans-serif;
+    bottom: -100px;
+    letter-spacing: 0.15em;
+}
+
